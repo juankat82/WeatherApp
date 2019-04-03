@@ -1,0 +1,172 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: SingletonClass</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">com.juan.weatherapp.com.juan.controller</a> ]
+</div>
+
+<h1>Coverage Summary for Class: SingletonClass (com.juan.weatherapp.com.juan.controller)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">SingletonClass</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 6)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 34)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package com.juan.weatherapp.com.juan.controller;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import android.content.Context;
+<i>4</i>&nbsp;import com.google.android.gms.common.ConnectionResult;
+<i>5</i>&nbsp;import com.google.android.gms.common.GoogleApiAvailability;
+<i>6</i>&nbsp;import com.juan.weatherapp.R;
+<i>7</i>&nbsp;import java.util.Date;
+<i>8</i>&nbsp;
+<i>9</i>&nbsp;public class SingletonClass {
+<i>10</i>&nbsp;
+<i>11</i>&nbsp;    private Context mContext;
+<i>12</i>&nbsp;
+<b class="nc"><i>13</i>&nbsp;    public SingletonClass(){}   //THIS CONSTRUCTOR EXISTS JUST TO MAKE TESTS EASIER</b>
+<i>14</i>&nbsp;    private SingletonClass(Context context)
+<b class="nc"><i>15</i>&nbsp;    {</b>
+<b class="nc"><i>16</i>&nbsp;        mContext=context;</b>
+<i>17</i>&nbsp;    }
+<i>18</i>&nbsp;
+<i>19</i>&nbsp;    public static SingletonClass getSingletClass(Context context)
+<i>20</i>&nbsp;    {
+<b class="nc"><i>21</i>&nbsp;        return new SingletonClass(context);</b>
+<i>22</i>&nbsp;    }
+<i>23</i>&nbsp;    public boolean isGooglePlayAvailable(Context context)
+<i>24</i>&nbsp;    {
+<b class="nc"><i>25</i>&nbsp;        GoogleApiAvailability availability=GoogleApiAvailability.getInstance();</b>
+<b class="nc"><i>26</i>&nbsp;        int result=availability.isGooglePlayServicesAvailable(context);</b>
+<b class="nc"><i>27</i>&nbsp;        if (result!= ConnectionResult.SUCCESS)</b>
+<i>28</i>&nbsp;        {
+<b class="nc"><i>29</i>&nbsp;             if(!availability.isUserResolvableError(result))</b>
+<b class="nc"><i>30</i>&nbsp;                 return false;</b>
+<b class="nc"><i>31</i>&nbsp;            return false;</b>
+<i>32</i>&nbsp;        }
+<i>33</i>&nbsp;        else {
+<b class="nc"><i>34</i>&nbsp;            return true;</b>
+<i>35</i>&nbsp;        }
+<i>36</i>&nbsp;    }
+<i>37</i>&nbsp;    public float getDifferenceOfDays(long oldTimeStamp) {
+<i>38</i>&nbsp;
+<b class="nc"><i>39</i>&nbsp;        long newTimeStamp=new Date().getTime();</b>
+<b class="nc"><i>40</i>&nbsp;        long millis=24*60*60*1000;</b>
+<i>41</i>&nbsp;
+<b class="nc"><i>42</i>&nbsp;        return (float) ((newTimeStamp/millis)-(oldTimeStamp/millis));</b>
+<i>43</i>&nbsp;    }
+<i>44</i>&nbsp;
+<i>45</i>&nbsp;    public int getImage(String icon)
+<i>46</i>&nbsp;    {
+<b class="nc"><i>47</i>&nbsp;        switch(icon)</b>
+<i>48</i>&nbsp;        {
+<i>49</i>&nbsp;            case &quot;i01d&quot;:
+<b class="nc"><i>50</i>&nbsp;                return R.drawable.i01d;</b>
+<i>51</i>&nbsp;            case &quot;i01n&quot;:
+<b class="nc"><i>52</i>&nbsp;                return R.drawable.i01n;</b>
+<i>53</i>&nbsp;            case &quot;i02d&quot;:
+<b class="nc"><i>54</i>&nbsp;                return R.drawable.i02d;</b>
+<i>55</i>&nbsp;            case &quot;i02n&quot;:
+<b class="nc"><i>56</i>&nbsp;                return R.drawable.i02n;</b>
+<i>57</i>&nbsp;            case &quot;i03d&quot;:
+<b class="nc"><i>58</i>&nbsp;                return R.drawable.i03d;</b>
+<i>59</i>&nbsp;            case &quot;i03n&quot;:
+<b class="nc"><i>60</i>&nbsp;                return R.drawable.i03n;</b>
+<i>61</i>&nbsp;            case &quot;i04d&quot;:
+<b class="nc"><i>62</i>&nbsp;                return R.drawable.i04d;</b>
+<i>63</i>&nbsp;            case &quot;i04n&quot;:
+<b class="nc"><i>64</i>&nbsp;                return R.drawable.i04n;</b>
+<i>65</i>&nbsp;            case &quot;i09d&quot;:
+<b class="nc"><i>66</i>&nbsp;                return R.drawable.i09d;</b>
+<i>67</i>&nbsp;            case &quot;i09n&quot;:
+<b class="nc"><i>68</i>&nbsp;                return R.drawable.i09n;</b>
+<i>69</i>&nbsp;            case &quot;i10d&quot;:
+<b class="nc"><i>70</i>&nbsp;                return R.drawable.i10d;</b>
+<i>71</i>&nbsp;            case &quot;i10n&quot;:
+<b class="nc"><i>72</i>&nbsp;                return R.drawable.i10n;</b>
+<i>73</i>&nbsp;            case &quot;i11d&quot;:
+<b class="nc"><i>74</i>&nbsp;                return R.drawable.i11d;</b>
+<i>75</i>&nbsp;            case &quot;i11n&quot;:
+<b class="nc"><i>76</i>&nbsp;                return R.drawable.i11n;</b>
+<i>77</i>&nbsp;            case &quot;i13d&quot;:
+<b class="nc"><i>78</i>&nbsp;                return R.drawable.i13d;</b>
+<i>79</i>&nbsp;            case &quot;i13n&quot;:
+<b class="nc"><i>80</i>&nbsp;                return R.drawable.i13n;</b>
+<i>81</i>&nbsp;            case &quot;i50d&quot;:
+<b class="nc"><i>82</i>&nbsp;                return R.drawable.i50d;</b>
+<i>83</i>&nbsp;            case &quot;i50n&quot;:
+<b class="nc"><i>84</i>&nbsp;                return R.drawable.i50n;</b>
+<i>85</i>&nbsp;            default:
+<b class="nc"><i>86</i>&nbsp;                return R.drawable.not_vailable;</b>
+<i>87</i>&nbsp;        }
+<i>88</i>&nbsp;    }
+<i>89</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2019-04-02 15:07</div>
+</div>
+</body>
+</html>

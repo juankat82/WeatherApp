@@ -1,0 +1,163 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: Weather</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">com.juan.weatherapp.com.juan.model</a> ]
+</div>
+
+<h1>Coverage Summary for Class: Weather (com.juan.weatherapp.com.juan.model)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">Weather</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 19)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 19)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package com.juan.weatherapp.com.juan.model;
+<i>2</i>&nbsp;
+<b class="nc"><i>3</i>&nbsp;public class Weather {</b>
+<i>4</i>&nbsp;
+<i>5</i>&nbsp;    private String mLocation;
+<i>6</i>&nbsp;    private float mLatitude;
+<i>7</i>&nbsp;    private float mLongitude;
+<i>8</i>&nbsp;    private long mTimeStamp;
+<i>9</i>&nbsp;    private String mWeatherCondition;
+<i>10</i>&nbsp;    private float temperature;
+<i>11</i>&nbsp;    private float windSpeed;
+<i>12</i>&nbsp;    private String windDirection;
+<i>13</i>&nbsp;    private String iconName;
+<i>14</i>&nbsp;
+<i>15</i>&nbsp;    public float getmLatitude() {
+<b class="nc"><i>16</i>&nbsp;        return mLatitude;</b>
+<i>17</i>&nbsp;    }
+<i>18</i>&nbsp;
+<i>19</i>&nbsp;    public void setmLatitude(float mLatitude) {
+<b class="nc"><i>20</i>&nbsp;        this.mLatitude = mLatitude;</b>
+<i>21</i>&nbsp;    }
+<i>22</i>&nbsp;
+<i>23</i>&nbsp;    public float getmLongitude() {
+<b class="nc"><i>24</i>&nbsp;        return mLongitude;</b>
+<i>25</i>&nbsp;    }
+<i>26</i>&nbsp;
+<i>27</i>&nbsp;    public void setmLongitude(float mLongitude) {
+<b class="nc"><i>28</i>&nbsp;        this.mLongitude = mLongitude;</b>
+<i>29</i>&nbsp;    }
+<i>30</i>&nbsp;
+<b class="nc"><i>31</i>&nbsp;    public void setIconName(String iconName){ this.iconName=iconName; }</b>
+<i>32</i>&nbsp;
+<b class="nc"><i>33</i>&nbsp;    public String getIconName() { return iconName; }</b>
+<i>34</i>&nbsp;
+<i>35</i>&nbsp;    public String getmLocation() {
+<b class="nc"><i>36</i>&nbsp;        return mLocation;</b>
+<i>37</i>&nbsp;    }
+<i>38</i>&nbsp;
+<i>39</i>&nbsp;    public void setmLocation(String mLocation) {
+<b class="nc"><i>40</i>&nbsp;        this.mLocation = mLocation;</b>
+<i>41</i>&nbsp;    }
+<i>42</i>&nbsp;
+<i>43</i>&nbsp;    public long getmTimeStamp() {
+<b class="nc"><i>44</i>&nbsp;        return mTimeStamp;</b>
+<i>45</i>&nbsp;    }
+<i>46</i>&nbsp;
+<i>47</i>&nbsp;    public void setmTimeStamp(long mTimeStamp) {
+<b class="nc"><i>48</i>&nbsp;        this.mTimeStamp = mTimeStamp;</b>
+<i>49</i>&nbsp;    }
+<i>50</i>&nbsp;
+<i>51</i>&nbsp;    public String getmWeatherCondition() {
+<b class="nc"><i>52</i>&nbsp;        return mWeatherCondition;</b>
+<i>53</i>&nbsp;    }
+<i>54</i>&nbsp;
+<b class="nc"><i>55</i>&nbsp;    public void setmWeatherCondition(String mWeatherCondition) { this.mWeatherCondition = mWeatherCondition; }</b>
+<i>56</i>&nbsp;
+<i>57</i>&nbsp;    public float getTemperature() {
+<b class="nc"><i>58</i>&nbsp;        return temperature;</b>
+<i>59</i>&nbsp;    }
+<i>60</i>&nbsp;
+<i>61</i>&nbsp;    public void setTemperature(float temperature) {
+<b class="nc"><i>62</i>&nbsp;        this.temperature = temperature;</b>
+<i>63</i>&nbsp;    }
+<i>64</i>&nbsp;
+<i>65</i>&nbsp;    public float getWindSpeed() {
+<b class="nc"><i>66</i>&nbsp;        return windSpeed;</b>
+<i>67</i>&nbsp;    }
+<i>68</i>&nbsp;
+<i>69</i>&nbsp;    public void setWindSpeed(float windSpeed) {
+<b class="nc"><i>70</i>&nbsp;        this.windSpeed = windSpeed;</b>
+<i>71</i>&nbsp;    }
+<i>72</i>&nbsp;
+<i>73</i>&nbsp;    public String getWindDirection() {
+<b class="nc"><i>74</i>&nbsp;        return windDirection;</b>
+<i>75</i>&nbsp;    }
+<i>76</i>&nbsp;
+<i>77</i>&nbsp;    public void setWindDirection(String windDirection) {
+<b class="nc"><i>78</i>&nbsp;        this.windDirection = windDirection;</b>
+<i>79</i>&nbsp;    }
+<i>80</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2019-04-02 15:07</div>
+</div>
+</body>
+</html>

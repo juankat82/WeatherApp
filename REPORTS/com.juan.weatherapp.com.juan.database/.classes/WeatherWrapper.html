@@ -1,0 +1,141 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: WeatherWrapper</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">com.juan.weatherapp.com.juan.database</a> ]
+</div>
+
+<h1>Coverage Summary for Class: WeatherWrapper (com.juan.weatherapp.com.juan.database)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">WeatherWrapper</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 19)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package com.juan.weatherapp.com.juan.database;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import android.database.Cursor;
+<i>4</i>&nbsp;import android.database.CursorWrapper;
+<i>5</i>&nbsp;import android.util.Log;
+<i>6</i>&nbsp;
+<i>7</i>&nbsp;import com.juan.weatherapp.com.juan.model.Weather;
+<i>8</i>&nbsp;
+<i>9</i>&nbsp;import java.util.Arrays;
+<i>10</i>&nbsp;
+<i>11</i>&nbsp;public class WeatherWrapper extends CursorWrapper {
+<i>12</i>&nbsp;
+<i>13</i>&nbsp;    private static final String TAG=&quot;WeatherWrapper&quot;;
+<i>14</i>&nbsp;    private Cursor mCursor;
+<i>15</i>&nbsp;    private Weather mWeather;
+<i>16</i>&nbsp;
+<i>17</i>&nbsp;
+<i>18</i>&nbsp;    /**
+<i>19</i>&nbsp;     * Creates a cursor wrapper.
+<i>20</i>&nbsp;     *
+<i>21</i>&nbsp;     * @param cursor The underlying cursor to wrap.
+<i>22</i>&nbsp;     */
+<i>23</i>&nbsp;    public WeatherWrapper(Cursor cursor) {
+<b class="nc"><i>24</i>&nbsp;        super(cursor);</b>
+<i>25</i>&nbsp;    }
+<i>26</i>&nbsp;
+<i>27</i>&nbsp;    public Weather getWeatherData(Cursor cursor)
+<i>28</i>&nbsp;    {
+<b class="nc"><i>29</i>&nbsp;        mCursor=cursor;</b>
+<b class="nc"><i>30</i>&nbsp;        mWeather=new Weather();</b>
+<b class="nc"><i>31</i>&nbsp;        if (mCursor==null || mCursor.getCount()==0)</b>
+<i>32</i>&nbsp;        {
+<b class="nc"><i>33</i>&nbsp;            return null;</b>
+<i>34</i>&nbsp;        }
+<i>35</i>&nbsp;        else
+<i>36</i>&nbsp;        {
+<i>37</i>&nbsp;            try
+<i>38</i>&nbsp;            {
+<b class="nc"><i>39</i>&nbsp;                mCursor.moveToFirst();</b>
+<b class="nc"><i>40</i>&nbsp;                mWeather.setmLocation(mCursor.getString(mCursor.getColumnIndex(WeatherColumns.Columns.LOCATION)));</b>
+<b class="nc"><i>41</i>&nbsp;                mWeather.setmLatitude(mCursor.getFloat(mCursor.getColumnIndex(WeatherColumns.Columns.LATITUDE)));</b>
+<b class="nc"><i>42</i>&nbsp;                mWeather.setmLongitude(mCursor.getFloat(mCursor.getColumnIndex(WeatherColumns.Columns.LONGITUDE)));</b>
+<b class="nc"><i>43</i>&nbsp;                mWeather.setmTimeStamp(mCursor.getLong(mCursor.getColumnIndex(WeatherColumns.Columns.TIMESTAMP)));</b>
+<b class="nc"><i>44</i>&nbsp;                mWeather.setmWeatherCondition(mCursor.getString(mCursor.getColumnIndex(WeatherColumns.Columns.WEATHER_CONDITION)));</b>
+<b class="nc"><i>45</i>&nbsp;                mWeather.setIconName(mCursor.getString(mCursor.getColumnIndex(WeatherColumns.Columns.ICON_NAME)));</b>
+<b class="nc"><i>46</i>&nbsp;                mWeather.setTemperature(mCursor.getInt(mCursor.getColumnIndex(WeatherColumns.Columns.TEMPERATURE)));</b>
+<b class="nc"><i>47</i>&nbsp;                mWeather.setWindSpeed(mCursor.getInt(mCursor.getColumnIndex(WeatherColumns.Columns.WIND_SPEED)));</b>
+<b class="nc"><i>48</i>&nbsp;                mWeather.setWindDirection(mCursor.getString(mCursor.getColumnIndex(WeatherColumns.Columns.WIND_DIRECTION)));</b>
+<b class="nc"><i>49</i>&nbsp;                mCursor.moveToNext();</b>
+<i>50</i>&nbsp;            }
+<i>51</i>&nbsp;            finally
+<i>52</i>&nbsp;            {
+<b class="nc"><i>53</i>&nbsp;                mCursor.close();</b>
+<b class="nc"><i>54</i>&nbsp;            }</b>
+<b class="nc"><i>55</i>&nbsp;            return mWeather;</b>
+<i>56</i>&nbsp;        }
+<i>57</i>&nbsp;    }
+<i>58</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2019-04-02 15:07</div>
+</div>
+</body>
+</html>

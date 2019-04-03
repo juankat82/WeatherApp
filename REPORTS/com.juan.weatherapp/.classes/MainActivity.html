@@ -1,0 +1,521 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: MainActivity</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">com.juan.weatherapp</a> ]
+</div>
+
+<h1>Coverage Summary for Class: MainActivity (com.juan.weatherapp)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">MainActivity</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 10)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 78)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">MainActivity$1</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 13)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">MainActivity$2</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 5)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">MainActivity$2$1</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 4)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">MainActivity$2$2</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 5)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">MainActivity$3</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 5)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">MainActivity$4</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 20)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 22)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 130)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package com.juan.weatherapp;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import android.Manifest;
+<i>4</i>&nbsp;import android.app.Activity;
+<i>5</i>&nbsp;import android.content.Context;
+<i>6</i>&nbsp;import android.content.DialogInterface;
+<i>7</i>&nbsp;import android.content.Intent;
+<i>8</i>&nbsp;import android.content.SharedPreferences;
+<i>9</i>&nbsp;import android.content.pm.ActivityInfo;
+<i>10</i>&nbsp;import android.content.pm.PackageManager;
+<i>11</i>&nbsp;import android.database.sqlite.SQLiteDatabase;
+<i>12</i>&nbsp;import android.location.Location;
+<i>13</i>&nbsp;import android.location.LocationManager;
+<i>14</i>&nbsp;import android.provider.Settings;
+<i>15</i>&nbsp;import android.support.annotation.NonNull;
+<i>16</i>&nbsp;import android.support.design.widget.FloatingActionButton;
+<i>17</i>&nbsp;import android.support.v4.app.ActivityCompat;
+<i>18</i>&nbsp;import android.support.v7.app.AlertDialog;
+<i>19</i>&nbsp;import android.support.v7.app.AppCompatActivity;
+<i>20</i>&nbsp;import android.os.Bundle;
+<i>21</i>&nbsp;import android.util.Log;
+<i>22</i>&nbsp;import android.view.View;
+<i>23</i>&nbsp;import android.widget.ImageView;
+<i>24</i>&nbsp;import android.widget.ProgressBar;
+<i>25</i>&nbsp;import android.widget.TextView;
+<i>26</i>&nbsp;import com.google.android.gms.location.FusedLocationProviderClient;
+<i>27</i>&nbsp;import com.google.android.gms.location.LocationCallback;
+<i>28</i>&nbsp;import com.google.android.gms.location.LocationRequest;
+<i>29</i>&nbsp;import com.google.android.gms.location.LocationResult;
+<i>30</i>&nbsp;import com.google.android.gms.location.LocationServices;
+<i>31</i>&nbsp;import com.juan.weatherapp.com.juan.controller.DataFlowController;
+<i>32</i>&nbsp;import com.juan.weatherapp.com.juan.controller.MyWeatherAsyncTask;
+<i>33</i>&nbsp;import com.juan.weatherapp.com.juan.controller.SingletonClass;
+<i>34</i>&nbsp;import com.juan.weatherapp.com.juan.database.WeatherOpenHelper;
+<i>35</i>&nbsp;import com.juan.weatherapp.com.juan.model.Weather;
+<i>36</i>&nbsp;import java.util.concurrent.ExecutionException;
+<i>37</i>&nbsp;import static android.Manifest.permission.ACCESS_COARSE_LOCATION;
+<i>38</i>&nbsp;import static android.Manifest.permission.ACCESS_FINE_LOCATION;
+<i>39</i>&nbsp;
+<b class="nc"><i>40</i>&nbsp;public class MainActivity extends AppCompatActivity {</b>
+<i>41</i>&nbsp;
+<i>42</i>&nbsp;    private static final String OPEN_WEATHERMAP_API_KEY=&quot;e41df8dbfc20e774eaa0bf2bbd632e71&quot;;
+<i>43</i>&nbsp;    private static final int GPS_REQUEST_CODE=33;
+<i>44</i>&nbsp;    private static final int PERMISSIONS_REQUEST_CODE=55;
+<i>45</i>&nbsp;    private SQLiteDatabase mWeatherDatabase;
+<i>46</i>&nbsp;    private Weather mWeather;
+<i>47</i>&nbsp;    private SharedPreferences mSharedPreferences;
+<i>48</i>&nbsp;    private FloatingActionButton mFloatingActionButton;
+<i>49</i>&nbsp;    private TextView mConditionTextView;
+<i>50</i>&nbsp;    private TextView mTemperatureTextView;
+<i>51</i>&nbsp;    private TextView mWindSpeedTextView;
+<i>52</i>&nbsp;    private TextView mWindDirectionTextView;
+<i>53</i>&nbsp;    private ImageView mConditionImageView;
+<i>54</i>&nbsp;    private ProgressBar mProgressCircle;
+<i>55</i>&nbsp;    private TextView mLoadingTextView;
+<i>56</i>&nbsp;    private TextView mMessageTextView;
+<i>57</i>&nbsp;    private LocationManager mLocationManager;
+<i>58</i>&nbsp;    private Intent gpsIntent;
+<b class="nc"><i>59</i>&nbsp;    private boolean isGpsEnabled=false;</b>
+<b class="nc"><i>60</i>&nbsp;    private boolean choseOffMode=false;</b>
+<b class="nc"><i>61</i>&nbsp;    private String[] permissions={ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION};</b>
+<i>62</i>&nbsp;    private FusedLocationProviderClient mFusedLocationProviderClient;
+<i>63</i>&nbsp;    private LocationCallback locationCallback;
+<i>64</i>&nbsp;    private LocationRequest locationRequest;
+<i>65</i>&nbsp;    private SingletonClass mSingletonClass;
+<i>66</i>&nbsp;    private DataFlowController mDataFlowController;
+<i>67</i>&nbsp;
+<i>68</i>&nbsp;
+<i>69</i>&nbsp;    /////////////////////////////////   MAIN APP&#39;s LOGIC AND METHOD OVERRIDING   ///////////////////////////////////////////
+<i>70</i>&nbsp;    public MainActivity getMe()
+<i>71</i>&nbsp;    {
+<b class="nc"><i>72</i>&nbsp;        return MainActivity.this;</b>
+<i>73</i>&nbsp;    }
+<i>74</i>&nbsp;    @Override
+<i>75</i>&nbsp;    protected void onCreate(Bundle savedInstanceState) {
+<b class="nc"><i>76</i>&nbsp;        super.onCreate(savedInstanceState);</b>
+<b class="nc"><i>77</i>&nbsp;        setContentView(R.layout.activity_main);</b>
+<b class="nc"><i>78</i>&nbsp;        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);</b>
+<b class="nc"><i>79</i>&nbsp;        mWeatherDatabase=new WeatherOpenHelper(MainActivity.this).getWritableDatabase();</b>
+<b class="nc"><i>80</i>&nbsp;        mSharedPreferences=getApplicationContext().getSharedPreferences(&quot;com.juan.weatherapp&quot;,Context.MODE_PRIVATE);</b>
+<b class="nc"><i>81</i>&nbsp;        mFloatingActionButton=findViewById(R.id.floatingActionButton);</b>
+<b class="nc"><i>82</i>&nbsp;        mConditionTextView=findViewById(R.id.condition_textview);</b>
+<b class="nc"><i>83</i>&nbsp;        mTemperatureTextView=findViewById(R.id.temperature_textview);</b>
+<b class="nc"><i>84</i>&nbsp;        mWindSpeedTextView=findViewById(R.id.wind_speed_textview);</b>
+<b class="nc"><i>85</i>&nbsp;        mWindDirectionTextView=findViewById(R.id.wind_direction_textview);</b>
+<b class="nc"><i>86</i>&nbsp;        mConditionImageView=findViewById(R.id.condition_image_view);</b>
+<b class="nc"><i>87</i>&nbsp;        mProgressCircle=findViewById(R.id.progress_circle);</b>
+<b class="nc"><i>88</i>&nbsp;        mLoadingTextView=findViewById(R.id.loading_text_view);</b>
+<b class="nc"><i>89</i>&nbsp;        mMessageTextView=findViewById(R.id.message_text_view);</b>
+<b class="nc"><i>90</i>&nbsp;        mLocationManager=(LocationManager) getSystemService(Context.LOCATION_SERVICE);</b>
+<b class="nc"><i>91</i>&nbsp;        mSingletonClass=SingletonClass.getSingletClass(this);</b>
+<b class="nc"><i>92</i>&nbsp;        mDataFlowController=new DataFlowController(mWeatherDatabase,mSharedPreferences);</b>
+<i>93</i>&nbsp;
+<i>94</i>&nbsp;        //checks google service is available
+<b class="nc"><i>95</i>&nbsp;         if (!mSingletonClass.isGooglePlayAvailable(this))</b>
+<i>96</i>&nbsp;         {
+<b class="nc"><i>97</i>&nbsp;             mMessageTextView.setVisibility(View.VISIBLE);//turn visibility OFF when hitting the RELOAD button</b>
+<b class="nc"><i>98</i>&nbsp;             mMessageTextView.setText(R.string.play_services_unavailable);</b>
+<i>99</i>&nbsp;         }
+<i>100</i>&nbsp;
+<i>101</i>&nbsp;
+<b class="nc"><i>102</i>&nbsp;          mFloatingActionButton.setOnClickListener(new View.OnClickListener() {</b>
+<i>103</i>&nbsp;              @Override
+<i>104</i>&nbsp;              public void onClick(View v) {
+<i>105</i>&nbsp;                  //If gps isnt active, request to turn it on then get location and perform weather request, otherwise, just request it
+<b class="nc"><i>106</i>&nbsp;                  isGpsEnabled=mLocationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);</b>
+<b class="nc"><i>107</i>&nbsp;                  mMessageTextView.setVisibility(View.GONE);</b>
+<i>108</i>&nbsp;
+<b class="nc"><i>109</i>&nbsp;                    if (!isGpsEnabled)</b>
+<i>110</i>&nbsp;                    {
+<b class="nc"><i>111</i>&nbsp;                        if (choseOffMode)</b>
+<i>112</i>&nbsp;                        {
+<b class="nc"><i>113</i>&nbsp;                            mMessageTextView.setText(R.string.you_need_gps);</b>
+<b class="nc"><i>114</i>&nbsp;                            mMessageTextView.setVisibility(View.VISIBLE);</b>
+<b class="nc"><i>115</i>&nbsp;                            setOffLineSystem(mWeather=mDataFlowController.getWeatherFromSharedPreferences());</b>
+<i>116</i>&nbsp;                        }
+<i>117</i>&nbsp;                        else//we turned off gps while app was on
+<i>118</i>&nbsp;                        {
+<b class="nc"><i>119</i>&nbsp;                            mMessageTextView.setVisibility(View.GONE);</b>
+<b class="nc"><i>120</i>&nbsp;                            enableGps();</b>
+<b class="nc"><i>121</i>&nbsp;                            getLocation();</b>
+<i>122</i>&nbsp;                        }
+<i>123</i>&nbsp;                    }
+<i>124</i>&nbsp;                    else
+<i>125</i>&nbsp;                    {
+<b class="nc"><i>126</i>&nbsp;                        mMessageTextView.setVisibility(View.GONE);</b>
+<b class="nc"><i>127</i>&nbsp;                        getLocation();</b>
+<i>128</i>&nbsp;                    }
+<i>129</i>&nbsp;              }
+<i>130</i>&nbsp;          });
+<i>131</i>&nbsp;    }
+<i>132</i>&nbsp;
+<i>133</i>&nbsp;    @Override
+<i>134</i>&nbsp;    public void onStart()
+<i>135</i>&nbsp;    {
+<b class="nc"><i>136</i>&nbsp;        super.onStart();</b>
+<b class="nc"><i>137</i>&nbsp;        int permission= ActivityCompat.checkSelfPermission(MainActivity.this, ACCESS_FINE_LOCATION);</b>
+<b class="nc"><i>138</i>&nbsp;        isGpsEnabled=mLocationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);</b>
+<b class="nc"><i>139</i>&nbsp;        if (permission== PackageManager.PERMISSION_GRANTED)</b>
+<i>140</i>&nbsp;        {
+<b class="nc"><i>141</i>&nbsp;            if (!isGpsEnabled)</b>
+<b class="nc"><i>142</i>&nbsp;                enableGps();</b>
+<i>143</i>&nbsp;            else
+<i>144</i>&nbsp;            {
+<b class="nc"><i>145</i>&nbsp;                choseOffMode=false;//indicate THE USER CHOSE TO HAVE THE GPS ON</b>
+<b class="nc"><i>146</i>&nbsp;                getLocation();</b>
+<i>147</i>&nbsp;            }
+<i>148</i>&nbsp;        }
+<i>149</i>&nbsp;        else
+<i>150</i>&nbsp;        {
+<b class="nc"><i>151</i>&nbsp;            ActivityCompat.requestPermissions(MainActivity.this,permissions,PERMISSIONS_REQUEST_CODE);</b>
+<i>152</i>&nbsp;        }
+<i>153</i>&nbsp;    }
+<i>154</i>&nbsp;
+<i>155</i>&nbsp;    @Override
+<i>156</i>&nbsp;    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,@NonNull int[] grantResults)
+<i>157</i>&nbsp;    {
+<b class="nc"><i>158</i>&nbsp;        super.onRequestPermissionsResult(requestCode,permissions,grantResults);</b>
+<b class="nc"><i>159</i>&nbsp;        if (requestCode==PERMISSIONS_REQUEST_CODE)</b>
+<i>160</i>&nbsp;        {
+<b class="nc"><i>161</i>&nbsp;            if (grantResults[0]!=PackageManager.PERMISSION_GRANTED)</b>
+<i>162</i>&nbsp;            {
+<b class="nc"><i>163</i>&nbsp;                mMessageTextView.setVisibility(View.VISIBLE);//turn visibility OFF when hitting the RELOAD button</b>
+<b class="nc"><i>164</i>&nbsp;                mMessageTextView.setText(R.string.permissions_not_granted);</b>
+<i>165</i>&nbsp;            }
+<i>166</i>&nbsp;            else
+<i>167</i>&nbsp;            {
+<b class="nc"><i>168</i>&nbsp;                if (mMessageTextView.getVisibility()==View.VISIBLE)</b>
+<b class="nc"><i>169</i>&nbsp;                    mMessageTextView.setVisibility(View.GONE);</b>
+<i>170</i>&nbsp;
+<b class="nc"><i>171</i>&nbsp;                if (isGpsEnabled)</b>
+<b class="nc"><i>172</i>&nbsp;                    getLocation();</b>
+<i>173</i>&nbsp;                else
+<b class="nc"><i>174</i>&nbsp;                    enableGps();</b>
+<i>175</i>&nbsp;            }
+<i>176</i>&nbsp;        }
+<i>177</i>&nbsp;    }
+<i>178</i>&nbsp;
+<i>179</i>&nbsp;    @Override
+<i>180</i>&nbsp;    public void onActivityResult(int requestCode, int resultCode, Intent data)
+<i>181</i>&nbsp;    {
+<b class="nc"><i>182</i>&nbsp;        if (requestCode==GPS_REQUEST_CODE)</b>
+<i>183</i>&nbsp;        {
+<b class="nc"><i>184</i>&nbsp;            if (resultCode== Activity.RESULT_OK)</b>
+<i>185</i>&nbsp;            {
+<b class="nc"><i>186</i>&nbsp;                isGpsEnabled=true;</b>
+<i>187</i>&nbsp;            }
+<i>188</i>&nbsp;        }
+<i>189</i>&nbsp;    }
+<i>190</i>&nbsp;    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+<i>191</i>&nbsp;    //////////////////////////////////   VIEW MANAGING //////////////////////////////////////////////////////////////////////////////
+<i>192</i>&nbsp;    public void setOffLineSystem(Weather weather)
+<i>193</i>&nbsp;    {
+<i>194</i>&nbsp;        float differenceOfDays;
+<b class="nc"><i>195</i>&nbsp;        SingletonClass singletonClass=SingletonClass.getSingletClass(this);</b>
+<i>196</i>&nbsp;        //if the data stores in sharedpreferences or database is older than a day or theres no data, just say theres no data available
+<b class="nc"><i>197</i>&nbsp;        if (weather==null) //if simply theres no data...</b>
+<i>198</i>&nbsp;        {
+<b class="nc"><i>199</i>&nbsp;            mConditionTextView.setText(R.string.no_data_text);</b>
+<b class="nc"><i>200</i>&nbsp;            mTemperatureTextView.setText(R.string.no_data_text);</b>
+<b class="nc"><i>201</i>&nbsp;            mWindSpeedTextView.setText(R.string.no_data_text);</b>
+<b class="nc"><i>202</i>&nbsp;            mWindDirectionTextView.setText(R.string.no_data_text);</b>
+<b class="nc"><i>203</i>&nbsp;            mConditionImageView.setImageResource(R.drawable.not_vailable);</b>
+<i>204</i>&nbsp;        }
+<i>205</i>&nbsp;        else
+<i>206</i>&nbsp;        {
+<b class="nc"><i>207</i>&nbsp;            differenceOfDays=singletonClass.getDifferenceOfDays(weather.getmTimeStamp());</b>
+<b class="nc"><i>208</i>&nbsp;            if (differenceOfDays&gt;=1.0)//Amount of days</b>
+<i>209</i>&nbsp;            {
+<b class="nc"><i>210</i>&nbsp;                mConditionTextView.setText(R.string.no_data_text);</b>
+<b class="nc"><i>211</i>&nbsp;                mTemperatureTextView.setText(R.string.no_data_text);</b>
+<b class="nc"><i>212</i>&nbsp;                mWindSpeedTextView.setText(R.string.no_data_text);</b>
+<b class="nc"><i>213</i>&nbsp;                mWindDirectionTextView.setText(R.string.no_data_text);</b>
+<b class="nc"><i>214</i>&nbsp;                mConditionImageView.setImageResource(R.drawable.not_vailable);</b>
+<i>215</i>&nbsp;            }
+<i>216</i>&nbsp;            else
+<i>217</i>&nbsp;            {
+<b class="nc"><i>218</i>&nbsp;                mConditionTextView.setText(weather.getmWeatherCondition());</b>
+<b class="nc"><i>219</i>&nbsp;                mTemperatureTextView.setText(String.format(&quot;%s&quot;,weather.getTemperature())+&quot;°C&quot;);</b>
+<b class="nc"><i>220</i>&nbsp;                mWindSpeedTextView.setText(String.format(&quot;%s&quot;,Math.round(weather.getWindSpeed()))+&quot; Mph&quot;);</b>
+<b class="nc"><i>221</i>&nbsp;                mWindDirectionTextView.setText(weather.getWindDirection());</b>
+<b class="nc"><i>222</i>&nbsp;                mConditionImageView.setImageResource(singletonClass.getImage(weather.getIconName()));</b>
+<i>223</i>&nbsp;            }
+<i>224</i>&nbsp;        }
+<i>225</i>&nbsp;    }
+<i>226</i>&nbsp;    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+<i>227</i>&nbsp;    ///////////////////////////////////////////////////  GPS MANAGING //////////////////////////////////////////////////////////////////////////////////
+<i>228</i>&nbsp;    public void enableGps()
+<i>229</i>&nbsp;    {
+<b class="nc"><i>230</i>&nbsp;        if(!isGpsEnabled)</b>
+<i>231</i>&nbsp;        {
+<b class="nc"><i>232</i>&nbsp;            new AlertDialog.Builder(MainActivity.this).setTitle(R.string.start_gps_question_title).setMessage(R.string.get_gps_enabled_string)</b>
+<b class="nc"><i>233</i>&nbsp;                    .setPositiveButton(&quot;OK&quot;, new DialogInterface.OnClickListener() {</b>
+<i>234</i>&nbsp;                        @Override
+<i>235</i>&nbsp;                        public void onClick(DialogInterface dialog, int which) {
+<b class="nc"><i>236</i>&nbsp;                            gpsIntent=new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);</b>
+<b class="nc"><i>237</i>&nbsp;                            startActivityForResult(gpsIntent, GPS_REQUEST_CODE);</b>
+<b class="nc"><i>238</i>&nbsp;                            isGpsEnabled=true;</b>
+<b class="nc"><i>239</i>&nbsp;                            choseOffMode=false;</b>
+<i>240</i>&nbsp;                        }
+<i>241</i>&nbsp;                    })
+<b class="nc"><i>242</i>&nbsp;                    .setNegativeButton(&quot;Cancel&quot;, new DialogInterface.OnClickListener() {</b>
+<i>243</i>&nbsp;                        @Override
+<i>244</i>&nbsp;                        public void onClick(DialogInterface dialog, int which) {
+<b class="nc"><i>245</i>&nbsp;                            new AlertDialog.Builder(MainActivity.this).setTitle(R.string.try_offline_mode_string).setMessage(R.string.are_you_sure_string)</b>
+<b class="nc"><i>246</i>&nbsp;                                    .setPositiveButton(&quot;Yes&quot;, new DialogInterface.OnClickListener() {</b>
+<i>247</i>&nbsp;                                        @Override
+<i>248</i>&nbsp;                                        public void onClick(DialogInterface dialog, int which) {
+<b class="nc"><i>249</i>&nbsp;                                            choseOffMode=true;</b>
+<i>250</i>&nbsp;
+<i>251</i>&nbsp;                                            //set using sharedpreferences
+<b class="nc"><i>252</i>&nbsp;                                            setOffLineSystem(mWeather=mDataFlowController.getWeatherFromSharedPreferences());</b>
+<i>253</i>&nbsp;
+<i>254</i>&nbsp;                                            //set using database
+<b class="nc"><i>255</i>&nbsp;                                            setOffLineSystem(mWeather=mDataFlowController.readFromDatabase(null,null));</b>
+<b class="nc"><i>256</i>&nbsp;                                            mMessageTextView.setVisibility(View.VISIBLE);</b>
+<i>257</i>&nbsp;                                        }
+<i>258</i>&nbsp;                                    })
+<b class="nc"><i>259</i>&nbsp;                                    .setNegativeButton(&quot;No&quot;, new DialogInterface.OnClickListener() {</b>
+<i>260</i>&nbsp;                                        @Override
+<i>261</i>&nbsp;                                        public void onClick(DialogInterface dialog, int which) {
+<b class="nc"><i>262</i>&nbsp;                                            enableGps();</b>
+<b class="nc"><i>263</i>&nbsp;                                            mMessageTextView.setVisibility(View.GONE);</b>
+<b class="nc"><i>264</i>&nbsp;                                            choseOffMode=false;</b>
+<i>265</i>&nbsp;                                        }
+<b class="nc"><i>266</i>&nbsp;                                    }).create().show();</b>
+<i>267</i>&nbsp;                        }
+<i>268</i>&nbsp;
+<b class="nc"><i>269</i>&nbsp;                    }).create().show();</b>
+<i>270</i>&nbsp;        }
+<i>271</i>&nbsp;    }
+<i>272</i>&nbsp;    public void getLocation()
+<i>273</i>&nbsp;    {
+<b class="nc"><i>274</i>&nbsp;        if (ActivityCompat.checkSelfPermission(MainActivity.this, ACCESS_FINE_LOCATION)==PackageManager.PERMISSION_GRANTED ||</b>
+<b class="nc"><i>275</i>&nbsp;                ActivityCompat.checkSelfPermission(MainActivity.this,ACCESS_COARSE_LOCATION)==PackageManager.PERMISSION_GRANTED)</b>
+<i>276</i>&nbsp;        {
+<b class="nc"><i>277</i>&nbsp;            mFusedLocationProviderClient= LocationServices.getFusedLocationProviderClient(this);</b>
+<i>278</i>&nbsp;
+<b class="nc"><i>279</i>&nbsp;            locationCallback=new LocationCallback(){</b>
+<i>280</i>&nbsp;                @Override
+<i>281</i>&nbsp;                public void onLocationResult(LocationResult locationResult)
+<i>282</i>&nbsp;                {
+<b class="nc"><i>283</i>&nbsp;                    Location location=locationResult.getLocations().get(locationResult.getLocations().size()-1);//gets last location (</b>
+<b class="nc"><i>284</i>&nbsp;                    float latitude=(float)location.getLatitude();</b>
+<b class="nc"><i>285</i>&nbsp;                    float longitude=(float)location.getLongitude();</b>
+<i>286</i>&nbsp;
+<b class="nc"><i>287</i>&nbsp;                    String stringToSend=&quot;https://api.openweathermap.org/data/2.5/weather?lat=&quot;+latitude+&quot;&amp;lon=&quot;+longitude+&quot;&amp;APPID=&quot;+OPEN_WEATHERMAP_API_KEY;</b>
+<i>288</i>&nbsp;
+<i>289</i>&nbsp;                    try {
+<b class="nc"><i>290</i>&nbsp;                        choseOffMode=false;</b>
+<b class="nc"><i>291</i>&nbsp;                        mWeather=new MyWeatherAsyncTask(MainActivity.this,MainActivity.this,mProgressCircle,mLoadingTextView).execute(stringToSend).get();</b>
+<i>292</i>&nbsp;
+<b class="nc"><i>293</i>&nbsp;                        mConditionTextView.setText(mWeather.getmWeatherCondition());</b>
+<b class="nc"><i>294</i>&nbsp;                        Log.i(&quot;MainActivity&quot;,&quot;WeatherCondition: &quot;+mWeather.getmWeatherCondition());</b>
+<b class="nc"><i>295</i>&nbsp;                        mTemperatureTextView.setText(String.valueOf(Math.round(mWeather.getTemperature()))+&quot;℃&quot;);</b>
+<b class="nc"><i>296</i>&nbsp;                        mWindSpeedTextView.setText(String.valueOf(Math.round(mWeather.getWindSpeed()))+&quot; Mph&quot;);</b>
+<b class="nc"><i>297</i>&nbsp;                        mWindDirectionTextView.setText(mWeather.getWindDirection());</b>
+<b class="nc"><i>298</i>&nbsp;                        mConditionImageView.setImageResource(mSingletonClass.getImage(mWeather.getIconName()));</b>
+<i>299</i>&nbsp;
+<i>300</i>&nbsp;                        //write to sharedpreferences
+<b class="nc"><i>301</i>&nbsp;                        mDataFlowController.writeSharedPreferences(mWeather);</b>
+<i>302</i>&nbsp;
+<i>303</i>&nbsp;                        //write to database
+<b class="nc"><i>304</i>&nbsp;                        mDataFlowController.writeToDatabase(mWeather);</b>
+<b class="nc"><i>305</i>&nbsp;                    } catch (ExecutionException e) {</b>
+<b class="nc"><i>306</i>&nbsp;                        e.printStackTrace();</b>
+<b class="nc"><i>307</i>&nbsp;                    } catch (InterruptedException e) {</b>
+<b class="nc"><i>308</i>&nbsp;                        e.printStackTrace();</b>
+<b class="nc"><i>309</i>&nbsp;                    }</b>
+<i>310</i>&nbsp;                }
+<i>311</i>&nbsp;            };
+<b class="nc"><i>312</i>&nbsp;            locationRequest=new LocationRequest().setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY).setNumUpdates(1).setInterval(2000);</b>
+<b class="nc"><i>313</i>&nbsp;            mFusedLocationProviderClient.requestLocationUpdates(locationRequest,locationCallback,null);</b>
+<i>314</i>&nbsp;        }
+<i>315</i>&nbsp;    }
+<i>316</i>&nbsp;    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+<i>317</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2019-04-02 15:07</div>
+</div>
+</body>
+</html>
