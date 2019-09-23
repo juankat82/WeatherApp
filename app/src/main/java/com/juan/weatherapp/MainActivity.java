@@ -46,7 +46,7 @@ import static android.Manifest.permission.ACCESS_FINE_LOCATION;
  */
 public class MainActivity extends AppCompatActivity {
 
-    private static final String OPEN_WEATHERMAP_API_KEY="e41df8dbfc20e774eaa0bf2bbd632e71";
+    private static final String OPEN_WEATHERMAP_API_KEY="";
     private static final int GPS_REQUEST_CODE=33;
     private static final int PERMISSIONS_REQUEST_CODE=55;
     private SQLiteDatabase mWeatherDatabase;
